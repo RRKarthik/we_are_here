@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login.dart';
+import 'package:we_are_here/RegistrationScreen.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -34,12 +35,13 @@ class MyApp extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 18.0),
                 child: Text(
                   "Login",
-                  style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
                 ),
               ),
               color: Colors.white, //Color(0xffffd5cd),//214252
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => LoginScreen()));
               },
               shape: RoundedRectangleBorder(
                 side: BorderSide(
@@ -68,7 +70,14 @@ class MyApp extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10.0),
               ),
               color: Colors.white,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => RegistrationScreen(),
+                  ),
+                );
+              },
             ),
           ],
         ),
