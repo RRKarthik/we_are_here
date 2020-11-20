@@ -4,11 +4,124 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:Column(
-        children: [
-          TextField(),
-        ],
-      )
+      backgroundColor: Color(0xffffd5cd),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            SizedBox(
+              height: 250.0,
+            ),
+            TextField(
+              cursorColor: Colors.black,
+              textAlign: TextAlign.center,
+              decoration: InputDecoration(
+                hintText: 'email',
+                hintStyle: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.black,
+                ),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  borderSide: BorderSide(
+                    color: Colors.black,
+                    width: 2.0,
+                  ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  borderSide: BorderSide(
+                    color: Colors.black,
+                    width: 2.0,
+                  ),
+                ),
+                disabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  borderSide: BorderSide(
+                    color: Colors.black,
+                    width: 2.0,
+                  ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  borderSide: BorderSide(
+                    color: Colors.black,
+                    width: 2.0,
+                  ),
+                ),
+              ),
+              onChanged: (value) {},
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            TextField(
+              cursorColor: Colors.black,
+              textAlign: TextAlign.center,
+              decoration: InputDecoration(
+                hintText: 'password',
+                hintStyle: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.black,
+                ),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  borderSide: BorderSide(
+                    color: Colors.black,
+                    width: 2.0,
+                  ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  borderSide: BorderSide(
+                    color: Colors.black,
+                    width: 2.0,
+                  ),
+                ),
+                disabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  borderSide: BorderSide(
+                    color: Colors.black,
+                    width: 2.0,
+                  ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  borderSide: BorderSide(
+                    color: Colors.black,
+                    width: 2.0,
+                  ),
+                ),
+              ),
+              onChanged: (value) {},
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            FlatButton(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 18.0),
+                child: Text(
+                  "Login",
+                  style: TextStyle(fontSize: 20.0),
+                ),
+              ),
+              shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  color: Colors.black,
+                  width: 2.0,
+                ),
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              color: Colors.white,
+              onPressed: () {},
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

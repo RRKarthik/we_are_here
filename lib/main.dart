@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'login.dart';
 
 void main() {
-  runApp(MaterialApp(home: MyApp(),));
+  runApp(MaterialApp(
+    home: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -10,46 +13,66 @@ class MyApp extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xffffd5cd),
       body: Padding(
-        padding:  EdgeInsets.symmetric(horizontal: 20.0,vertical: 10.0),
+        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
-           children: [
-             Center(child: Text("We are here",style: TextStyle(fontSize: 50.0),)),
-             SizedBox(height: 17.0,),
-             FlatButton(
-               child: Padding(
-                 padding:  EdgeInsets.symmetric(horizontal: 20.0,vertical: 18.0),
-                 child: Text("Login",style: TextStyle(fontSize: 20.0),),
-               ),
-               color: Colors.white,//Color(0xffffd5cd),//214252
-               onPressed: (){
-
-               },
-               shape: RoundedRectangleBorder(
-                 borderRadius: BorderRadius.circular(10.0),
-               ),
-             ),
-             SizedBox(
-               height: 20.0,
-             ),
-             FlatButton(
-               child: Padding(
-                 padding:  EdgeInsets.symmetric(horizontal: 20.0,vertical: 18.0),
-                 child: Text("Register",style: TextStyle(fontSize: 20.0),),
-               ),
-               shape: RoundedRectangleBorder(
-                 borderRadius: BorderRadius.circular(10.0),
-               ),
-               color: Colors.white,//Color(0xffffd5cd),//214252
-               onPressed: (){
-
-               },
-             ),
-           ],
+          children: [
+            Center(
+                child: Text(
+              "we are here",
+              style: TextStyle(
+                  fontSize: 60.0,
+                  fontWeight: FontWeight.w900,
+                  fontFamily: 'DancingScript'),
+            )),
+            SizedBox(
+              height: 20.0,
+            ),
+            FlatButton(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 18.0),
+                child: Text(
+                  "Login",
+                  style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold),
+                ),
+              ),
+              color: Colors.white, //Color(0xffffd5cd),//214252
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+              },
+              shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  color: Colors.black,
+                  width: 2.0,
+                ),
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            FlatButton(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 18.0),
+                child: Text(
+                  "Register",
+                  style: TextStyle(fontSize: 20.0),
+                ),
+              ),
+              shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  color: Colors.black,
+                  width: 2.0,
+                ),
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              color: Colors.white,
+              onPressed: () {},
+            ),
+          ],
         ),
       ),
     );
   }
 }
-
