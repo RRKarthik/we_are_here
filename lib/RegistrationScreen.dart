@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:we_are_here/ButtonScreen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class RegistrationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final _fbase = FirebaseAuth.instance;
+    String email;
+    String password;
     return Scaffold(
       backgroundColor: Color(0xffffd5cd),
       body: Padding(
@@ -53,7 +57,9 @@ class RegistrationScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              onChanged: (value) {},
+              onChanged: (value) {
+                email = value;
+              },
             ),
             SizedBox(
               height: 30.0,
@@ -97,7 +103,9 @@ class RegistrationScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              onChanged: (value) {},
+              onChanged: (value) {
+                password = value;
+              },
             ),
             SizedBox(
               height: 30.0,
@@ -118,13 +126,21 @@ class RegistrationScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10.0),
               ),
               color: Colors.white,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ButtonScreen(),
-                  ),
-                );
+              onPressed: () async{
+                try {
+                  final user = await _fbase.createUserWithEmailAndPassword(
+                      email: email, password: password);
+                  if(user != null) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ButtonScreen(),
+                      ),
+                    );
+                  }
+                }catch(e){
+                  print(e);
+                }
               },
             ),
           ],

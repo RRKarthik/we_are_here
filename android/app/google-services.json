@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "950762166792",
+    "firebase_url": "https://we-are-here-559c6.firebaseio.com",
+    "project_id": "we-are-here-559c6",
+    "storage_bucket": "we-are-here-559c6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:950762166792:android:294d6369f6993e6d750fbd",
+        "android_client_info": {
+          "package_name": "com.rrk.we_are_here"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "950762166792-81t9nl9vtdd1d5mihug3grl3rq8ro3ls.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAu6534bfB-3pIvTDnXp93N2JN0T-S_YVE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "950762166792-81t9nl9vtdd1d5mihug3grl3rq8ro3ls.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

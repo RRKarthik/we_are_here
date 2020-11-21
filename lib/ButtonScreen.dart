@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:we_are_here/MessageScreen.dart';
 
 class ButtonScreen extends StatelessWidget {
   @override
@@ -15,11 +16,24 @@ class ButtonScreen extends StatelessWidget {
               SizedBox(
                 height: 30.0,
               ),
-              Row (
+              Row(
                 children: [
-                  Expanded(child: SizedBox(width: double.infinity,)),
+                  Expanded(
+                      child: SizedBox(
+                    width: double.infinity,
+                  )),
                   IconButton(
-                    icon: Icon(Icons.chat,size: 45.0,color: Colors.black,),
+                    icon: Icon(
+                      Icons.chat,
+                      size: 45.0,
+                      color: Colors.black,
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MessageScreen()));
+                    },
                   ),
                 ],
               ),
@@ -30,10 +44,11 @@ class ButtonScreen extends StatelessWidget {
                   child: RaisedButton(
                 disabledColor: Colors.black,
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 100.0, vertical: 50.0),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 100.0, vertical: 50.0),
                   child: Text(
                     "Help",
-                    style: TextStyle(fontSize: 50.0,color: Colors.white),
+                    style: TextStyle(fontSize: 50.0, color: Colors.white),
                   ),
                 ),
                 elevation: 30.0,

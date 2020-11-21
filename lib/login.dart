@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:we_are_here/ButtonScreen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginScreen extends StatelessWidget {
+  final _fbase_auth = FirebaseAuth.instance;
+  String email;
+  String password;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +58,9 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              onChanged: (value) {},
+              onChanged: (value) {
+                email = value;
+              },
             ),
             SizedBox(
               height: 30.0,
@@ -97,7 +104,9 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              onChanged: (value) {},
+              onChanged: (value) {
+                password = value;
+              },
             ),
             SizedBox(
               height: 30.0,
@@ -118,8 +127,19 @@ class LoginScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10.0),
               ),
               color: Colors.white,
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>ButtonScreen()));
+              onPressed: () async {
+                try {
+                  final user = await _fbase_auth.signInWithEmailAndPassword(
+                      email: email, password: password);
+                  if (user != null) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ButtonScreen()));
+                  }
+                } catch (e) {
+                  print(e);
+                }
               },
             ),
           ],
