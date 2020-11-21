@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:we_are_here/ButtonScreen.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -117,7 +118,9 @@ class LoginScreen extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10.0),
               ),
               color: Colors.white,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>ButtonScreen()));
+              },
             ),
           ],
         ),
